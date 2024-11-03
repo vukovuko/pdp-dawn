@@ -1,0 +1,33 @@
+<div class="product-main-images">
+  <swiper-component 
+    data-thumbs=".swiper-thumbnail-product-images"
+    class="swiper swiper-main-product-images" 
+  >
+    <div class="swiper-wrapper">
+      {% for media in product.media %}
+        <div class="swiper-slide swiper-product__media">
+          {% render 'product_media', media: media %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-next"> </div>
+    <div class="swiper-button-prev"> </div>
+  </swiper-component>
+</div>
+<div class="product-thumbnail-images">
+  <swiper-component 
+    data-slides-per-view="4" 
+    data-freemode="true" 
+    data-watch-slides-progress="true"
+    data-space-between="10"
+    class="swiper swiper-thumbnail-product-images"
+  >
+    <div class="swiper-wrapper">
+      {% for media in product.media %}
+        <div class="swiper-slide swiper-product__media swiper-product__media--thumbnail">
+          {% render 'product_media', media: media %}
+        </div>
+      {% endfor %}
+    </div>
+  </swiper-component>
+</div>

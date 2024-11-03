@@ -1,0 +1,17 @@
+<product-accordion>
+  <div class="accordion-header">
+    {% if block.settings.heading != blank %}
+      <p class="accordion-heading">
+        {% render 'accordion-caret' %}
+        <span>
+          {{ block.settings.heading }}
+        </span>
+      </p>
+    {% endif %}
+  </div>
+  <div class="accordion-content">
+    {% if block.settings.content != blank %}
+      {{ block.settings.content }}
+    {% endif %}
+  </div>
+</product-accordion>
