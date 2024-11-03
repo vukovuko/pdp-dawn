@@ -11,7 +11,33 @@
   "sections": {
     "main": {
       "type": "product-information",
+      "blocks": {
+        "title_and_price_Xxzf8q": {
+          "type": "title_and_price",
+          "settings": {
+          }
+        },
+        "text_8ceVUp": {
+          "type": "text",
+          "settings": {
+            "text": "100% Organic Cotton / Made in Tamil Nadu, India"
+          }
+        },
+        "accordion_nxWLTM": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Product information",
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "title_and_price_Xxzf8q",
+        "text_8ceVUp",
+        "accordion_nxWLTM"
+      ],
       "settings": {
+        "breadcrumbs": true
       }
     }
   },
