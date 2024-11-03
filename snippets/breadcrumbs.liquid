@@ -1,0 +1,29 @@
+{% comment %}
+  Renders the breadcrumb.
+
+  Usage:
+  {% render 'breadcrumbs' %}
+{% endcomment %}
+
+{%- unless template.name == 'index' or template.name == 'cart' -%}
+  {% if template.name == 'product' %}
+    <div class="breadcrumb-container">
+  {% endif %}
+  <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+    <a href="{{ routes.root_url }}" class="link" title="Back to homepage">Home</a>
+
+    {%- if template.name == 'product' -%}
+      {%- assign collection = product.collections | first -%}
+      {%- if collection and collection.handle %}
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+        {% capture url %}{{ routes.collections_url }}/{{ collection.handle }}{% endcapture %}
+        {{ collection.title | link_to: url, class: "link" }}
+      {%- endif %}
+      <span class="breadcrumb__divider" aria-hidden="true">/</span>
+      <span class="breadcrumb__item">{{ product.title }}</span>
+    {%- endif -%}
+  </nav>
+  {% if template.name == 'product' %}
+    </div>
+  {% endif %}
+{%- endunless -%}

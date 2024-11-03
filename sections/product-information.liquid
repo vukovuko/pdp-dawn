@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="{{ 'swiper-bundle.min.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-product-information.css' | asset_url }}" media="print" onload="this.media='all'">
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+<script src="{{ 'section-product-information.js' | asset_url }}" defer="defer"></script>
+
+<div class="product-information__container">
+  <div class="product-information__wrapper">
+    <div class="product-information__images">
+      {% if section.settings.breadcrumbs %}
+        {% render 'breadcrumbs' %}
+      {% endif %}
+
+      {% comment %} PRODUCT MEDIA GALLERY {% endcomment %}
+      {% render 'product-images', product: product %}
+      
+    </div>
+    <div class="product-information__text">
+      <div class="product-information-text__wrapper">
+        <div class="product-information">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'title_and_price' -%}
+                {%- render 'title-and-price', product: product -%}
+              {%- when 'text' -%}
+                {%- render 'product-text', block: block -%}
+              {%- when 'accordion' -%}
+                {%- render 'product-accordion', block: block -%}
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product information",
+  "tag": "section",
+  "class": "product-information",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "breadcrumbs",
+      "label": "Show breadcrumbs",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Title & price",
+      "type": "title_and_price",
+      "limit": 1
+    },
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "100% Organic Cotton / Made in Tamil Nadu, India"
+        }
+      ]
+    },
+    {
+      "name": "Dropdown",
+      "type": "accordion",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Product information"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product information",
+      "blocks": [
+        {
+          "type": "title_and_price"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
