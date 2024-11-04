@@ -26,9 +26,7 @@
                 | image_url: width: 1100
                 | image_tag:
                   loading: 'lazy',
-                  widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
-                  width: block.settings.width,
-                  height: block.settings.image.width | divided_by: block.settings.image.aspect_ratio | round
+                  widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100'
               }}
             {% else %}
               {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
