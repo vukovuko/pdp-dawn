@@ -1,23 +1,21 @@
 <product-accordion>
-  <div class="accordion-header">
+  <div 
+    class="accordion-header {% if block.settings.keep_open %}accordion__item--active{% endif %}"
+  >
     {% if block.settings.heading != blank %}
       <p class="accordion-heading">
         {% render 'accordion-caret' %}
         <span>
           {% if block.settings.heading != blank %}
             {{ block.settings.heading }}
-          {% elsif block.settings.page.title != blank %}
-            {{ block.settings.page.title }}
           {% endif %}
         </span>
       </p>
     {% endif %}
   </div>
-  <div class="accordion-content">
-    {% if block.settings.page != blank %}
-      {{ block.settings.page.content }}
-    {% elsif block.settings.content != blank %}
-      {{ block.settings.content }}
-    {% endif %}
+  <div 
+    class="accordion-content {% if block.settings.keep_open %}accordion-content--open{% endif %}"
+  >
+    {{ product.description }}
   </div>
 </product-accordion>
