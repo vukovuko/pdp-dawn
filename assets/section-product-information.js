@@ -6,6 +6,7 @@ if (!customElements.get('swiper-component')) {
       this.swiperWrapper = this.querySelector('.swiper-wrapper');
       this.swiperButtonNext = this.querySelector('.swiper-button-next');
       this.swiperButtonPrev = this.querySelector('.swiper-button-prev');
+      this.swiperPagination = this.querySelector('.swiper-pagination');
       this.settings = {
         slidesPerView: parseInt(this.dataset.slidesPerView) || 1,
         freemode: this.dataset.freemode === 'true',
@@ -14,6 +15,10 @@ if (!customElements.get('swiper-component')) {
         navigation: {
           nextEl: this.swiperButtonNext,
           prevEl: this.swiperButtonPrev,
+        },
+        pagination: {
+          el: this.swiperPagination,
+          type: "bullets",
         },
         thumbs: this.dataset.thumbs ? { swiper: null } : undefined,
       }
