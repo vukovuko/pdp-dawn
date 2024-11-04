@@ -57,6 +57,11 @@
           "settings": {
           }
         },
+        "image_MNrip8": {
+          "type": "image",
+          "settings": {
+          }
+        },
         "text_GFMj3b": {
           "type": "text",
           "settings": {
@@ -64,11 +69,6 @@
             "icon": "craft",
             "subtitle": "<b>100% natural pigments &/or mordants to dye fibers and garments</b>",
             "text": "<p>Describe your product in a few sentences. Use the space to tell your customers what they can expect from your product.</p>"
-          }
-        },
-        "image_MNrip8": {
-          "type": "image",
-          "settings": {
           }
         },
         "image_CYAMHX": {
@@ -79,8 +79,8 @@
       },
       "block_order": [
         "image_fNCVf9",
-        "text_GFMj3b",
         "image_MNrip8",
+        "text_GFMj3b",
         "image_CYAMHX"
       ],
       "settings": {
