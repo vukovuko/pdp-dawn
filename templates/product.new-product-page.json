@@ -48,9 +48,49 @@
       "settings": {
         "breadcrumbs": true
       }
+    },
+    "image_text_grid_hxrAry": {
+      "type": "image-text-grid",
+      "blocks": {
+        "image_fNCVf9": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "text_GFMj3b": {
+          "type": "text",
+          "settings": {
+            "title": "The Craft",
+            "icon": "craft",
+            "subtitle": "<b>100% natural pigments &/or mordants to dye fibers and garments</b>",
+            "text": "<p>Describe your product in a few sentences. Use the space to tell your customers what they can expect from your product.</p>"
+          }
+        },
+        "image_MNrip8": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image_CYAMHX": {
+          "type": "image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "image_fNCVf9",
+        "text_GFMj3b",
+        "image_MNrip8",
+        "image_CYAMHX"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "image_text_grid_hxrAry"
   ]
 }
